@@ -7,26 +7,12 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
         <Toolbar>
-            <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Blog Dashboard
-            </Typography>
-
-            <Button color="inherit"><Link to={'/'}>Home</Link></Button>
-            <Button color="inherit"><Link to={'/add'}>Add Blog</Link></Button>
-
-
-
-
+            <Typography  component="div" sx={{ flexGrow: 1 }} fontSize={"50px"} >Blog Dashboard</Typography>
+            <Button  variant='outlined' color="inherit"><Link to={'/'}>Home</Link></Button>
+            <Button  variant='outlined' color="inherit"><Link to={'/add'}>Add Blog</Link></Button>
         </Toolbar>
         </AppBar>
-
-
-
     </Box>
-
-
-
-
   )
 }
 

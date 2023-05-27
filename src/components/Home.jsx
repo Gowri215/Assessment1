@@ -1,32 +1,22 @@
-import { Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const TableS = () => {
-    const [datas,setData] = useState([])
+const Home = () => {
+    const [datas,setDatas] = useState([])
 
     useEffect(() =>{
 
         axios.get("https://jsonplaceholder.typicode.com/posts")
-        .then((response) =>{
-            setData(response.data)
+        .then((res) =>{
+            setDatas(res.data)
 
         })
-        .catch((error) =>{
-            console.log(error)
+        .catch((err) =>{
+            console.log(err)
         })
-
-
-
-
 
     })
-
-
-
-
-
-
 
   return (
     <div>
@@ -34,38 +24,26 @@ const TableS = () => {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell>TITLE</TableCell>
-
-
+                        <TableCell style={{fontSize:"30px"}}>ID</TableCell>
+                        <TableCell style={{fontSize:"30px"}}>TITLE</TableCell>
                     </TableRow>
-
-
                 </TableHead>
-
                 <TableBody>
                     {datas.map((val,index)=>{
                         return(
                             <TableRow key={index}>
-
                             <TableCell>{val.id}</TableCell>
                             <TableCell>{val.title}</TableCell>
-
-
-
                         </TableRow>
                          )
 
                     })}
-
-
                 </TableBody>
-    </Table>
-
-</TableContainer>
+            </Table>
+        </TableContainer>
 
     </div>
   )
 }
 
-export default TableS
+export default Home
